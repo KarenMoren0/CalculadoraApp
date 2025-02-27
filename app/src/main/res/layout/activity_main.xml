@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
     <!-- Pantalla de resultados -->
     <TextView
@@ -14,70 +16,80 @@
         android:gravity="end"
         android:padding="16dp"
         android:text="0"
-        android:textSize="24sp" />
+        android:textSize="32sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Botones de la calculadora -->
+    <!-- Grid de botones -->
     <GridLayout
-        android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="4"
         android:rowCount="5"
-        android:layout_gravity="center"
-        android:padding="16dp">
+        android:padding="8dp">
 
-        <!-- Primera fila: C (ocupa dos espacios), ⌫ y / -->
+        <!-- Primera fila: CA (borrar un número), C, %, ÷ -->
+        <Button
+            android:id="@+id/btnClearAll"
+            android:text="CA"
+            style="@style/ButtonStyleBlue"
+            android:layout_columnWeight="1"/>
+
         <Button
             android:id="@+id/btnClear"
             android:text="C"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"/>
+            style="@style/ButtonStyleBlue"
+            android:layout_columnWeight="1"/>
 
         <Button
-            android:id="@+id/btnBorrarUno"
-            android:text="⌫"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/btnPercentage"
+            android:text="%"
+            style="@style/ButtonStyleBlue"
             android:layout_columnWeight="1"/>
 
         <Button
             android:id="@+id/btnDivide"
-            android:text="/"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:text="÷"
+            style="@style/ButtonStyleBlue"
             android:layout_columnWeight="1"/>
 
-        <!-- Segunda fila: Números 7, 8, 9 y * -->
-        <Button android:id="@+id/btn7" android:text="7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn8" android:text="8" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn9" android:text="9" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btnMultiply" android:text="*" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
+        <!-- Segunda fila: 7, 8, 9, x -->
+        <Button android:id="@+id/btn7" android:text="7" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn8" android:text="8" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn9" android:text="9" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btnMultiply" android:text="x" style="@style/ButtonStyleBlue"/>
 
-        <!-- Tercera fila: Números 4, 5, 6 y - -->
-        <Button android:id="@+id/btn4" android:text="4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn5" android:text="5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn6" android:text="6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btnSubtract" android:text="-" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
+        <!-- Tercera fila: 4, 5, 6, - -->
+        <Button android:id="@+id/btn4" android:text="4" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn5" android:text="5" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn6" android:text="6" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btnSubtract" android:text="-" style="@style/ButtonStyleBlue"/>
 
-        <!-- Cuarta fila: Números 1, 2, 3 y + -->
-        <Button android:id="@+id/btn1" android:text="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn2" android:text="2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btn3" android:text="3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btnAdd" android:text="+" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
+        <!-- Cuarta fila: 1, 2, 3, + -->
+        <Button android:id="@+id/btn1" android:text="1" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn2" android:text="2" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btn3" android:text="3" style="@style/ButtonStyleWhite"/>
+        <Button android:id="@+id/btnAdd" android:text="+" style="@style/ButtonStyleBlue"/>
 
-        <!-- Quinta fila: 0 (ocupa dos espacios), , y = -->
+        <!-- Quinta fila: 0, ., = -->
         <Button
             android:id="@+id/btn0"
             android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyleWhite"
+            android:layout_columnWeight="1"/>
+
+        <Button
+            android:id="@+id/btnComa"
+            android:text="."
+            style="@style/ButtonStyleWhite"
+            android:layout_columnWeight="1"/>
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:text="="
+            style="@style/ButtonStyleBlue"
             android:layout_columnSpan="2"
             android:layout_gravity="fill"/>
-
-        <Button android:id="@+id/btnComa" android:text="," android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
-        <Button android:id="@+id/btnEquals" android:text="=" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"/>
 
     </GridLayout>
 </LinearLayout>

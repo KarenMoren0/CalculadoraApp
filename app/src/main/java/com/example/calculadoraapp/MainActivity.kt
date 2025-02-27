@@ -22,8 +22,9 @@ class MainActivity : AppCompatActivity() {
             R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
             R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9,
             R.id.btnAdd, R.id.btnSubtract, R.id.btnMultiply, R.id.btnDivide,
-            R.id.btnEquals, R.id.btnClear, R.id.btnBorrarUno, // Agregamos %
-            R.id.btnComa // Agregamos ,
+            R.id.btnEquals, R.id.btnClear, R.id.btnClearAll, // btnClearAll reemplaza a ⌫
+            R.id.btnPercentage, // Nuevo botón de porcentaje
+            R.id.btnComa // Botón de coma
         )
 
         buttons.forEach { id ->
@@ -34,25 +35,24 @@ class MainActivity : AppCompatActivity() {
     private fun onButtonClick(button: Button) {
         when (val text = button.text.toString()) {
             "C" -> clear()
-            "⌫" -> borrarUltimoNumero()
-            "+", "-", "*", "/" -> setOperator(text)
+            "CA" -> borrarUltimoNumero()
+            "%" -> aplicarPorcentaje()
+            "+", "-", "x", "÷" -> setOperator(text)  // Cambia "*" a "x" y "/" a "÷"
             "=" -> calculate()
-            "," -> agregarComa() // Agregar función para la coma
+            "." -> agregarComa()
             else -> appendNumber(text)
         }
     }
-
     private fun agregarComa() {
         if (!currentNumber.contains(".")) { // Verifica que no haya otra coma
             if (currentNumber.isEmpty()) {
-                currentNumber = "0." // Si está vacío, agrega "0."
+                currentNumber = "0."
             } else {
-                currentNumber += "." // Agrega el punto decimal
+                currentNumber += "."
             }
             tvResult.text = currentNumber
         }
     }
-
 
     private fun clear() {
         currentNumber = ""
@@ -65,6 +65,14 @@ class MainActivity : AppCompatActivity() {
         if (currentNumber.isNotEmpty()) {
             currentNumber = currentNumber.dropLast(1)
             tvResult.text = if (currentNumber.isEmpty()) "0" else currentNumber
+        }
+    }
+
+    private fun aplicarPorcentaje() {
+        if (currentNumber.isNotEmpty()) {
+            val number = currentNumber.toDouble() / 100
+            currentNumber = number.toString()
+            tvResult.text = currentNumber
         }
     }
 
@@ -82,12 +90,11 @@ class MainActivity : AppCompatActivity() {
             val result = when (operator) {
                 "+" -> firstNumber + secondNumber
                 "-" -> firstNumber - secondNumber
-                "*" -> firstNumber * secondNumber
-                "/" -> firstNumber / secondNumber
+                "x" -> firstNumber * secondNumber
+                "÷" -> firstNumber / secondNumber
                 else -> 0.0
             }
 
-            // Si el resultado es entero (ej: 4.0), lo convertimos a Int
             val formattedResult = if (result % 1 == 0.0) result.toInt().toString() else result.toString()
 
             tvResult.text = formattedResult
