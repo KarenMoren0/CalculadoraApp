@@ -57,42 +57,128 @@
         android:padding="4dp">
 
         <!-- Fila 1 -->
-        <Button android:id="@+id/btnBackspace" android:text="CA" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnClear" android:text="C" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnPercentage" android:text="%" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnDivide" android:text="÷" style="@style/ButtonStyleBlack"/>
+        <Button
+            android:id="@+id/btnBackspace"
+            style="@style/ButtonStyleBlack"
+            android:text="CA"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/ButtonStyleBlack"
+            android:text="C"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnPercentage"
+            style="@style/ButtonStyleBlack"
+            android:text="%"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            style="@style/ButtonStyleBlack"
+            android:text="÷"
+            android:textColor="#FFFFFF" />
 
         <!-- Fila 2 -->
-        <Button android:id="@+id/btn7" android:text="7" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn8" android:text="8" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn9" android:text="9" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnMultiply" android:text="x" style="@style/ButtonStyleBlack"/>
+        <Button
+            android:id="@+id/btn7"
+            style="@style/ButtonStyleBlack"
+            android:text="7"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/ButtonStyleBlack"
+            android:text="8"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/ButtonStyleBlack"
+            android:text="9"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            style="@style/ButtonStyleBlack"
+            android:text="x"
+            android:textColor="#FFFFFF" />
 
         <!-- Fila 3 -->
-        <Button android:id="@+id/btn4" android:text="4" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn5" android:text="5" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn6" android:text="6" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnSubtract" android:text="-" style="@style/ButtonStyleBlack"/>
+        <Button
+            android:id="@+id/btn4"
+            style="@style/ButtonStyleBlack"
+            android:text="4"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/ButtonStyleBlack"
+            android:text="5"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/ButtonStyleBlack"
+            android:text="6"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            style="@style/ButtonStyleBlack"
+            android:text="-"
+            android:textColor="#FFFFFF" />
 
         <!-- Fila 4 -->
-        <Button android:id="@+id/btn1" android:text="1" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn2" android:text="2" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btn3" android:text="3" style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnAdd" android:text="+" style="@style/ButtonStyleBlack"/>
+        <Button
+            android:id="@+id/btn1"
+            style="@style/ButtonStyleBlack"
+            android:text="1"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/ButtonStyleBlack"
+            android:text="2"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/ButtonStyleBlack"
+            android:text="3"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/ButtonStyleBlack"
+            android:text="+"
+            android:textColor="#FFFFFF" />
 
         <!-- Fila 5 -->
-        <Button android:id="@+id/btn0"
-            android:text="0"
+        <Button
+            android:id="@+id/btn0"
             style="@style/ButtonStyleBlack"
             android:layout_width="0dp"
-            android:layout_columnWeight="1"/>
+            android:layout_columnWeight="1"
+            android:text="0"
+            android:textColor="#FFFFFF" />
 
-        <Button android:id="@+id/btnComa" android:text="." style="@style/ButtonStyleBlack"/>
-        <Button android:id="@+id/btnEquals"
-            android:text="=" style="@style/ButtonStyleBlack"
-            android:layout_columnSpan="2"
+        <Button
+            android:id="@+id/btnComa"
+            style="@style/ButtonStyleBlack"
+            android:text="."
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnEquals"
+            style="@style/ButtonStyleBlack"
             android:layout_width="0dp"
-            android:layout_columnWeight="2"/>
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:text="="
+            android:textColor="#FFFFFF" />
     </GridLayout>
 
 </LinearLayout>
